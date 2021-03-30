@@ -1,0 +1,20 @@
+{
+    "name": "flexpeak/f_perfume",
+    "description": "Desafio FlexPeak",
+    "authors": [
+        {
+            "name": "Luan Albuquerque dos Santos",
+            "email": "luan.santos6605@gmail.com"
+        }
+    ],
+    "require": {},
+    
+    "autoload":{
+        
+        "psr-4":{
+            "App\\":"../app/",
+            "Src\\":"../src/"
+            
+        }
+    }
+}
