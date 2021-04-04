@@ -4,11 +4,22 @@ namespace Src\Classes;
 
 class ClassRender
 {
-    private $_Dir;
-    private $_Title;
-    private $_Description;
-    private $_KeyWords;
+    private $Dir;
+    private $Title;
+    private $Description;
+    private $KeyWords;
 
+    public function getDir(){ return $this->Dir;  }
+    public function setDir($Dir) {return $this->Dir = $Dir; }
+    
+    public function getTitle(){ return $this->Title; }
+    public function setTitle($Title){ return $this->Title = $Title; }
+
+    public function getDescription(){ return $this->Description; }
+    public function setDescription($Description) { $this->Description = $Description; }
+
+    public function getKeyWords(){ return $this->KeyWord; }
+    public function setKeyWords($KeyWords){ return $this->KeyWords = $KeyWords; }
 
     public function renderLayout()
     {
