@@ -8,7 +8,7 @@ class ClassRender
     private $Title;
     private $Description;
     private $KeyWords;
-
+#get and set
     public function getDir(){ return $this->Dir;  }
     public function setDir($Dir) {return $this->Dir = $Dir; }
     
