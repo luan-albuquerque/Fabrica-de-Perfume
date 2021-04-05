@@ -28,8 +28,8 @@ class ClassRender
 
     public function addHeader() #Cabeçalho 
     {
-        if (file_exists(DIRREQ . "app/viwes/{$this->_Dir}/header.php")) {
-            include(DIRREQ . "app/viwes/{$this->_Dir}/header.php");
+        if (file_exists(DIRREQ . "app/views/{$this->Dir}/header.php")) {
+            include(DIRREQ . "app/views/{$this->Dir}/header.php");
         } else {
             echo "Arquivo Header Inexistente";
         }
@@ -37,24 +37,24 @@ class ClassRender
 
     public function addHead() #Cabeça
     {
-        if (file_exists(DIRREQ . "app/views/{$this->_Dir}/head.php")) {
-            include(DIRREQ . "app/views/{$this->_Dir}/head.php");
+        if (file_exists(DIRREQ . "app/views/{$this->Dir}/head.php")) {
+            include(DIRREQ . "app/views/{$this->Dir}/head.php");
         } else {
             echo " Arquivo Head Inexistente";
         }
     }
     public function addMain()
     {
-        if (file_exists(DIRREQ . "app/viwes/{$this->_Dir}/main.php")) {
-            include(DIRREQ . "app/viwes/{$this->_Dir}/main.php");
+        if (file_exists(DIRREQ . "app/views/{$this->Dir}/main.php")) {
+            include(DIRREQ . "app/views/{$this->Dir}/main.php");
         } else {
             echo "Arquivo Main Inexistente";
         }
     }
     public function addFooter()
     {
-        if (file_exists(DIRREQ . "app/viwes/{$this->Dir}/footer.php")) {
-            include(DIRREQ . "app/viwes/{$this->Dir}/footer.php");
+        if (file_exists(DIRREQ . "app/views/{$this->Dir}/footer.php")) {
+            include(DIRREQ . "app/views/{$this->Dir}/footer.php");
         } else {
             echo "Arquivo Footer Inexistente";
         }

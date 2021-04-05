@@ -3,7 +3,7 @@
 namespace Src\Classes;
 Class ClassRoutes{
 
-    use \Src\traits\Urlparser;
+    use \Src\Traits\Urlparser;
     
 private $_ROTA;
 
