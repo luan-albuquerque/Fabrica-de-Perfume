@@ -11,7 +11,10 @@ if(substr($_SERVER['DOCUMENT_ROOT'],-1) == "/"){
          define("DIRREQ", "{$_SERVER['DOCUMENT_ROOT']}s/{$_pasta_interna}"); 
 }
 
-
+define('HOST', 'localhost');
+define('USER', 'root');
+define('PASS', "");
+define('DB', 'F_PERFUME');
 
 
 ?>
