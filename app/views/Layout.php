@@ -42,6 +42,7 @@
 
     <!-- Custom Onload Script -->
     <script src="<?php echo DIRTHEME?>/scripts/load.js"></script>
+    <?php $this->addHeader()?>
 
 </head>
 <body>
