@@ -60,4 +60,13 @@ class ControllerHome extends ModelPerfume
 
 	       </table>";
     }
+
+
+public function Cadastrar(){
+
+echo "ola mundo";
+
+
+}
+
 }
