@@ -1,1 +1,1 @@
-header
+<script src="<?php echo DIRJS?>/meujs.js"></script>
