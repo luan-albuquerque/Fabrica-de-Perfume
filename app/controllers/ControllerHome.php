@@ -1,27 +1,28 @@
 <?php
+
 namespace App\Controllers;
 
-use App\models\ClassConexao;
-use App\models\ModelFragancia;
+
+use App\models\ModelPerfume;
 use Src\Classes\ClassRender;
 
-class ControllerHome extends ModelFragancia{
-    
-public function __construct()
-{   
-       $Render = new ClassRender;
-       $Render->setDir("home");
-       $Render->setTitle("Pagina Inicial");
-       $Render->setDescription("Pagina de Inicio");
-       $Render->setKeyWords("PgInicial");
-       $Render->renderLayout();
-    
-}
+class ControllerHome extends ModelPerfume
+{
 
-public function CarregarTabela(){
-    $result = $this->ListarFrag();
+    public function __construct()
+    {
+        $Render = new ClassRender;
+        $Render->setDir("home");
+        $Render->setTitle("Pagina Inicial");
+        $Render->setDescription("Pagina de Inicio");
+        $Render->setKeyWords("PgInicial");
+        $Render->renderLayout();
+    }
 
-    echo " <table cellspacing='0' cellpadding='4' border='0' id='ctl00_Body_grvChamados' style='color:#333333;width:100%;border-collapse:collapse;'>
+    public function CarregarTabelaPerfume()
+    {
+        $result = $this->ListarPerfume();
+        echo " <table cellspacing='0' cellpadding='4' border='0' id='ctl00_Body_grvChamados' style='color:#333333;width:100%;border-collapse:collapse;'>
 	
         <!--DEF DE COLUNAS -->
          	<tr style='color:White;background-color:#71C39A;font-weight:bold;'>
@@ -37,36 +38,26 @@ public function CarregarTabela(){
         <!-- TR DE VALORES ACRESCENTA -->
     ";
 
-    foreach($result as $dados){
-    echo "
+        foreach ($result as $dados) {
+            echo "
         <tr align='center' style='background-color:#E3EAEB;'>
 			
-            <td>$dados[ID]</td>
-            <td><STRONG>$dados[REG]</STRONG></td>
+            <td><STRONG>$dados[COD]</STRONG></td>
+            <td>$dados[REG]</td>
             <td>$dados[ID_F]</td>
             <td>$dados[VF]</td>
             <td>$dados[VA]</td>
             <td>$dados[VAL]</td>
 
-            <td align='center' style='width:20px;'>
-            <a href='easy.pdf' target='blank'  class='btn-action glyphicons eye_open btn-info'>
-              <i></i>
-             </a>
-            </td>
+            
 	       </tr>
 
             ";
         }
-           echo "
+        echo "
         <!--FIM DO TR DE ADIÇÃO-->
 
 
 	       </table>";
-
-
-
-}
-
-
-
+    }
 }
