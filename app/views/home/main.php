@@ -4,26 +4,13 @@
     <div class="row-fluid">
         <div class="row-fluid">
 
-
-            <div class="span4">
-                <div class="control-group">
-                    <label class="control-label">Quantidade do Perfume</label>
-                    <div class="controls">
-                        <div class="input-append">
-                            <input name="perfume" type="text" id="perfume" class="span8" placeholder="ml" style="width:85%;">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div class="span4">
 
                 <div class="control-group">
                     <label class="control-label">Fragância</label>
 
                     <div class="controls">
-                        <select name="" id="" class="span8" style="width:85%;">
+                        <select name="" id="" class="span8">
                             <option selected="selected" value="0">Selecione</option>
                             <?php $OBJ_FRAG = new App\controllers\ControllerFragancia;
                             $FRAG_SEL = $OBJ_FRAG->ListarSelectFrag();
@@ -37,6 +24,40 @@
                     </div>
                 </div>
             </div>
+
+
+
+
+            <div class="span4">
+                <div class="control-group">
+                    <label class="control-label">Quantidade do Perfume</label>
+                    <div class="controls">
+                        <div class="input-append">
+                            <input name="perfume" type="number" id="perfume" class="span8" placeholder="Ex: 1000" style="width:85%;">
+
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="span1">
+
+                <div class="control-group">
+                    <label class="control-label">Tipo</label>
+
+                    <div class="controls">
+                        <select name="tipo_v" id="tipo_v" class="span8" style="width:100%;">
+                            <option selected="selected" value="0">ML</option>
+                            <option value="1">L</option>
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
 
         </div>
 
@@ -66,17 +87,14 @@
 </div>
 <!--MODAL-->
 
-
-
 <div class="modal fade bd-example-modal-lg" tabindex="0" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content" style="padding: 15px 15px;">
 
-            <form action="<?php echo DIRPAGE ?>" method="post">
+            <form onsubmit="req_p()" id="perfform" name="perfform">
+
                 <div class="row-fluid">
-
-
 
                     <div class="span4">
                         <div class="control-group">
@@ -115,7 +133,8 @@
                     </div>
                 </div>
 
-                <button class="redirect btn btn-primary" type="submit">Cadastrar</button>
+                <input class="redirect btn btn-primary" value="Cadastrar" type="submit">
+                
             </form>
 
 
