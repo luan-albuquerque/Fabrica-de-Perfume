@@ -9,14 +9,14 @@
             tipo = document.getElementById("tipo_v").value;
 
 if(tipo=='1'){
-    document.getElementById("frag").placeholder = (parcela2 * 1000);
-    document.getElementById("agua").placeholder = (parcela1 * 1000);
-    document.getElementById("alcool").placeholder = (parcela2 * 1000);
+    document.getElementById("frag").value = (parcela2 * 1000);
+    document.getElementById("agua").value = (parcela1 * 1000);
+    document.getElementById("alcool").value = (parcela2 * 1000);
     
 } else{
-    document.getElementById("frag").placeholder = parcela2;
-    document.getElementById("agua").placeholder = parcela1;
-    document.getElementById("alcool").placeholder = parcela2;
+    document.getElementById("frag").value = parcela2;
+    document.getElementById("agua").value = parcela1;
+    document.getElementById("alcool").value = parcela2;
 
 }
 
@@ -25,21 +25,24 @@ if(tipo=='1'){
     });
 
 
-   
-
-
-var frag = document.getElementById("frag").value;
-var agua = document.getElementById("agua").value;
-var alcool = document.getElementById("alcool").value;
-
-
-
-
 function req_p(){
+   var perfume,frag,agua,alcool;
 
-    addEventListener('submit', function (e) {
+     perfume = document.getElementById("perfume").value;
+     frag = document.getElementById("frag").value;
+     agua = document.getElementById("agua").value;
+     alcool = document.getElementById("alcool").value;
     
-        alert('teste');
+    addEventListener('submit', function (e) {
+       
+        if((agua+frag+alcool)!='1000'){
+        alert("Valores acima do esperado.");
         e.preventDefault();
+    
+    }else{
+
+        alert("Funcionou!!!");
+    }
+
     });
-}
+};
