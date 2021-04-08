@@ -9,7 +9,7 @@ Class ClassConexao{
         
         try {
         
-         $con = new \PDO('mysql:host=localhost;dbname=F_PERFUME','luans', '123');
+         $con = new \PDO('mysql:host='.HOST.';dbname='.DB, USER, PASS);
            echo "<script>alert('BANCO CONECTADO')</script>";
              return $con;
             

@@ -20,8 +20,8 @@ define('DIRTHEME', "http://{$_SERVER['HTTP_HOST']}/{$PastaInterna}public/theme/"
 define('DIRBOOTSTRAP', "http://{$_SERVER['HTTP_HOST']}/{$PastaInterna}public/bootstrap/");
 
 define('HOST', 'localhost');
-define('USER', 'root');
-define('PASS', "");
+define('USER', 'luans');
+define('PASS', "123");
 define('DB', 'F_PERFUME');
 
 
