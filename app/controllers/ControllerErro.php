@@ -5,6 +5,6 @@ class ControllerErro{
 
     public function __construct()
     {
-        echo " Fatal erro";        
+        echo "Erro 404!!!";        
     }
 }
