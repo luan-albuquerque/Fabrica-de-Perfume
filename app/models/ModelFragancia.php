@@ -17,13 +17,16 @@ protected function ListarFrag(){
        'COD' => $Fetch['id'],
        'DESC' => $Fetch['descr']
     ]; 
-   $I++;
+    $I++;
+}
+
+   
    if(isset($ArrayList)){
        return $ArrayList;
    }else{
        echo "Erro ao Listar Conteúdo";
    }
-}
+
 
 }
 
