@@ -1,17 +1,15 @@
 <?php
-$_pasta_interna = "";
+$PastaInterna = "";
 
 
-define('DIRPAGE',"http://{$_SERVER['HTTP_HOST']}/{$_pasta_interna}");
+define('DIRPAGE',"http://{$_SERVER['HTTP_HOST']}/{$PastaInterna}");
 
 
 if(substr($_SERVER['DOCUMENT_ROOT'],-1) == "/"){
-         define('DIRREQ', "{$_SERVER['DOCUMENT_ROOT']}{$_pasta_interna}");
+         define('DIRREQ', "{$_SERVER['DOCUMENT_ROOT']}{$PastaInterna}");
 }else{
-         define("DIRREQ", "{$_SERVER['DOCUMENT_ROOT']}s/{$_pasta_interna}"); 
+         define('DIRREQ', "{$_SERVER['DOCUMENT_ROOT']}/{$PastaInterna}"); 
 }
-
-
 
 define('DIRCSS', "http://{$_SERVER['HTTP_HOST']}/{$PastaInterna}public/css/");
 define('DIRJS', "http://{$_SERVER['HTTP_HOST']}/{$PastaInterna}public/js/");
