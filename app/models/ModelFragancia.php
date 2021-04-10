@@ -20,13 +20,8 @@ protected function ListarFrag(){
     $I++;
 }
 
-   
-   if(isset($ArrayList)){
        return $ArrayList;
-   }else{
-       echo "Erro ao Listar Conteúdo";
-   }
-
+ 
 
 }
 
