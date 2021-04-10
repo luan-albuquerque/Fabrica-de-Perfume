@@ -62,6 +62,17 @@ echo "<script>alert('Campos Vazios')</script>";
     }
 
 }
+protected function DeletarPerfume($ID){
+
+    if (isset($ID)) {
+        $this->db = $this->connectionMysql()
+            ->prepare("DELETE FROM perfume WHERE idperf=:ID");
+        $this->db->bindParam(":ID", $ID, \PDO::PARAM_INT);
+        $this->db->execute();
+
+    } 
+
+}
 
 
 }
