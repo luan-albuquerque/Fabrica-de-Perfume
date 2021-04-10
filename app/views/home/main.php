@@ -1,22 +1,23 @@
 <div id="content">
     <h3 class="glyphicons notes_2"><i></i>Fabricação de Perfumes</h3>
-
+   
     <div class="row-fluid">
         <div class="row-fluid">
-
+        <form onsubmit="req_p()" method="POST" action="<?PHP echo DIRPAGE?>home/Cadastrar-Perfume" id="perfform" name="perfform">
+       
             <div class="span4">
 
                 <div class="control-group">
                     <label class="control-label">Fragância</label>
 
                     <div class="controls">
-                        <select name="" id="" class="span8">
-                            <option selected="selected" value="0">Selecione</option>
+                        <select name="select_idfrag" id="select_idfrag" class="span8">
+                            <option selected="selected" value="sel">Selecione</option>
                             <?php $OBJ_FRAG = new App\controllers\ControllerFragancia;
                             $FRAG_SEL = $OBJ_FRAG->ListarSelectFrag();
                             foreach ($FRAG_SEL as $dados) {
                             ?>
-                                <option value="<?PHP echo $dados['ID'] ?>">
+                                <option value="<?PHP echo $dados['COD']?>">
                                     <?php echo $dados['DESC'] ?>
                                 </option>
                             <?php } ?>
@@ -37,7 +38,7 @@
 
                         </div>
 
-                        
+
                     </div>
                 </div>
             </div>
@@ -87,13 +88,13 @@
 </div>
 <!--MODAL-->
 
-<div class="modal fade bd-example-modal-lg" tabindex="0" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div id="modalperfume" class="modal fade bd-example-modal-lg" tabindex="0" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content" style="padding: 15px 15px;">
 
-            <form onsubmit="req_p()" id="perfform" name="perfform">
-
+            
+              
                 <div class="row-fluid">
 
                     <div class="span4">
@@ -134,7 +135,7 @@
                 </div>
 
                 <input class="redirect btn btn-primary" value="Cadastrar" type="submit">
-                
+
             </form>
 
 
