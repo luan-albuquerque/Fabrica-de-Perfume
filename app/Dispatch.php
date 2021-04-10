@@ -43,7 +43,9 @@ private function controleDeMetodos()
 {
 
     $this->MetodoExecutavel = array(
-        "Cadastrar-Perfume" => "Cadastrar"
+        "Cadastrar-Perfume" => "Cadastrar",
+        "Alterar-Dados-de-Perfume" => "Update",
+        "Formulario-Update" =>  "FormUpdate"
 
     );
 
@@ -61,7 +63,7 @@ private function addMethod()
         if (method_exists($this->_Obj, $this->controleDeMetodos()[$URL[1]])) {
 
             $this->set_Method($this->controleDeMetodos()[$URL[1]]);
-
+            self::addParam();
             call_user_func_array([$this->_Obj, $this->get_Method()], $this->get_Param());
         } else {
             echo " Metodo não encontrado !!";
@@ -70,4 +72,28 @@ private function addMethod()
         echo "Erro no Array de Metodos";
     }
 }
+
+
+private function addParam()
+{
+ 
+    $ContArray = count($this->parserURL());
+
+    if ($ContArray > 2) {
+        foreach ($this->parserURL() as $Key => $value) {
+           if($Key > 1){
+            
+             $this->set_Param($this->_Param += [$Key => $value]);
+            
+           }          
+        
+        }
+
+
+    }
+  //  var_dump($this->get_Param());
+
+
+}
+
 }
