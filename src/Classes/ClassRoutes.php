@@ -15,8 +15,14 @@ public function getRota(){
  #
     $this->_ROTA = array( 
       "" => "ControllerHome",
-      "home" => "ControllerHome"
-
+      "home" => "ControllerHome",
+      "cadastro-fragancia" => "ControllerFragancia", 
+      "cadastro-agua" => "ControllerAgua",
+      "cadastro-alcool" => "ControllerAlcool",
+      "estoque-fragancia" =>"ControllerEstFrag",
+      "estoque-agua" =>"ControllerEstAgua",
+      "estoque-alcool" =>"ControllerEstAlcool",
+      ""
     );
 
     if(array_key_exists($_I, $this->_ROTA)){ # Se existir na rota a url digitada
