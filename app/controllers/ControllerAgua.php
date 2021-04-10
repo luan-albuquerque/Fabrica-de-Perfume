@@ -2,20 +2,20 @@
 
 namespace App\controllers;
 
-use App\models\ModelAlcool;
+use App\models\ModelAgua;
 use Src\Classes\ClassRender;
 
-class ControllerEstAlcool extends ModelAlcool{
+class ControllerAgua extends ModelAgua{
+
     public function __construct()
     { $render = new ClassRender();
       $render->setKeyWords('');
       $render->setDescription('');
       $render->setTitle('');
-      $render->setDir('est_alcool');
+      $render->setDir('agua');
       $render->renderLayout();
        
     }
-
 
     
 }

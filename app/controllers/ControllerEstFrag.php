@@ -2,20 +2,21 @@
 
 namespace App\controllers;
 
-use App\models\ModelAlcool;
+
+use App\models\ModelFragancia;
 use Src\Classes\ClassRender;
 
-class ControllerEstAlcool extends ModelAlcool{
+class ControllerEstFrag extends ModelFragancia{
+
     public function __construct()
     { $render = new ClassRender();
       $render->setKeyWords('');
       $render->setDescription('');
       $render->setTitle('');
-      $render->setDir('est_alcool');
+      $render->setDir('agua');
       $render->renderLayout();
        
     }
-
 
     
 }
