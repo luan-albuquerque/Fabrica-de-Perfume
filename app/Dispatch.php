@@ -44,6 +44,7 @@ private function controleDeMetodos()
 
     $this->MetodoExecutavel = array(
         "Cadastrar-Perfume" => "Cadastrar",
+        "Deletar-Perfume" => "Excluir",
         "Alterar-Dados-de-Perfume" => "Update",
         "Formulario-Update" =>  "FormUpdate"
 
