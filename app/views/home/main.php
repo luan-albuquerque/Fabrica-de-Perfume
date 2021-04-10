@@ -57,9 +57,6 @@
                     </div>
                 </div>
             </div>
-
-
-
         </div>
 
 
@@ -75,17 +72,6 @@
     </div>
 </div>
 
-<div class="row-fluid">
-    <div class="span12">
-        <div>
-
-            <?php
-            $home = new App\controllers\ControllerHome;
-            $home->CarregarTabelaPerfume();
-            ?>
-        </div>
-    </div>
-</div>
 <!--MODAL-->
 
 <div id="modalperfume" class="modal fade bd-example-modal-lg" tabindex="0" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -142,3 +128,16 @@
         </div>
     </div>
 </div> <!-- FIM DO MODAL-->
+
+
+<div class="row-fluid">
+    <div class="span12">
+        <div>
+
+            <?php
+            $home = new App\controllers\ControllerHome;
+            $home->CarregarTabelaPerfume();
+            ?>
+        </div>
+    </div>
+</div>
