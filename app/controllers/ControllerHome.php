@@ -9,7 +9,7 @@ use Src\Classes\ClassRender;
 
 class ControllerHome extends ModelPerfume
 {
-    protected $VF,$VA,$VAL,$VT,$IDF,$ID;
+    protected $VF, $VA, $VAL, $VT, $IDF, $ID, $codEx;
 
 
     public function __construct()
@@ -21,21 +21,42 @@ class ControllerHome extends ModelPerfume
         $Render->setKeyWords("PgInicial");
         $Render->renderLayout();
     }
-    private function recValores(){
-        if (isset($_POST['id_perf'])) { $this->ID = filter_input(INPUT_POST, 'id_perf', FILTER_SANITIZE_SPECIAL_CHARS);}
-      if(isset($_POST['frag'])){ $this->VF = filter_input(INPUT_POST, 'frag', FILTER_SANITIZE_SPECIAL_CHARS);}
-      if(isset($_POST['agua'])){ $this->VA = filter_input(INPUT_POST, 'agua',FILTER_SANITIZE_SPECIAL_CHARS);}
-      if(isset($_POST['alcool'])){ $this->VAL = filter_input(INPUT_POST, 'alcool',FILTER_SANITIZE_SPECIAL_CHARS);}
-      if(isset($_POST['select_idfrag'])){ $this->IDF = filter_input(INPUT_POST, 'select_idfrag',FILTER_SANITIZE_SPECIAL_CHARS);}
-      if(isset($_POST['perfume'])){ 
-        $this->VT = filter_input(INPUT_POST, 'perfume',FILTER_SANITIZE_SPECIAL_CHARS);}
-         if($_POST['tipo_v']==1){ $this->VT = $this->VT * 1000; }  
+    private function recValores()
+    {
+        if (isset($_POST['id_perf'])) {
+            $this->ID = filter_input(INPUT_POST, 'id_perf', FILTER_SANITIZE_SPECIAL_CHARS);
+        }
+        if (isset($_POST['id_cod'])) {
+            $this->codEx = $_POST['id_cod'];
+        }
+        if (isset($_POST['frag'])) {
+            $this->VF = filter_input(INPUT_POST, 'frag', FILTER_SANITIZE_SPECIAL_CHARS);
+        }
+        if (isset($_POST['agua'])) {
+            $this->VA = filter_input(INPUT_POST, 'agua', FILTER_SANITIZE_SPECIAL_CHARS);
+        }
+        if (isset($_POST['alcool'])) {
+            $this->VAL = filter_input(INPUT_POST, 'alcool', FILTER_SANITIZE_SPECIAL_CHARS);
+        }
+        if (isset($_POST['select_idfrag'])) {
+            $this->IDF = filter_input(INPUT_POST, 'select_idfrag', FILTER_SANITIZE_SPECIAL_CHARS);
+        }
+        if (isset($_POST['perfume'])) {
+            $this->VT = filter_input(INPUT_POST, 'perfume', FILTER_SANITIZE_SPECIAL_CHARS);
+        }
+        if ($_POST['tipo_v'] == 1) {
+            $this->VT = $this->VT * 1000;
+        }
     }
 
     public function CarregarTabelaPerfume()
     {
         $result = $this->ListarPerfume();
-        echo " <table cellspacing='0' cellpadding='4' border='0' id='ctl00_Body_grvChamados' style='color:#333333;width:100%;border-collapse:collapse;'>
+
+        echo "
+        
+        <form id='formexcluir' method='POST' action='",DIRPAGE."home/Deletar-Perfume'>
+        <table cellspacing='0' cellpadding='4' border='0' id='ctl00_Body_grvChamados' style='color:#333333;width:100%;border-collapse:collapse;'>
 	
         <!--DEF DE COLUNAS -->
          	<tr style='color:White;background-color:#71C39A;font-weight:bold;'>
@@ -55,9 +76,9 @@ class ControllerHome extends ModelPerfume
     ";
 
         foreach ($result as $dados) {
-            
+
             $dataC = new DateTime();
-             $dt = $dataC->format('d/m/Y');
+            $dt = $dataC->format('d/m/Y');
             echo "
         <tr align='center' style='background-color:#E3EAEB;'>
 			
@@ -68,46 +89,67 @@ class ControllerHome extends ModelPerfume
             <td>$dados[VA]ml</td>
             <td>$dados[VAL]ml</td>
             <td><STRONG>$dados[VT]ml</sSTRONG></td>
-            <td><a href='".DIRPAGE."home/Formulario-Update/$dados[COD]' target='blank'  class='btn-action glyphicons pencil btn-info'><i></i></a></td>
-            <td><a href='' target='blank'  class='btn-action glyphicons bin btn-info'><i></i></a></td>
+            <td><a href='" . DIRPAGE . "home/Formulario-Update/$dados[COD]' target='blank'  class='btn-action glyphicons pencil btn-info'><i></i></a></td>
+            <td>
+            <label class='lix' id='l1' for='$dados[COD]'>
+            <a id='asel'class=' btn-action glyphicons bin btn-info'> 
+            <i></i></a></label>
+            <input class='offCheckbox' type='checkbox' id='$dados[COD]' name='id_cod[]' value='$dados[COD]'>
+           
+
+</td>
 	       </tr>
 
             ";
         }
         echo "
         <!--FIM DO TR DE ADIÇÃO-->
-
-
-	       </table>";
+	       </table>
+          <hr>
+           <input class='redirect btn btn-primary' value='Excluir' for='formexcluir' type='submit'>
+           </form>";
     }
 
 
-public function Cadastrar(){
+    public function Cadastrar()
+    {
 
-$this->recValores();
-$this->cadastrarPerfume($this->VF,$this->VA,$this->VAL,$this->IDF,$this->VT);
-
-}
-
-public function Update(){
-    
-    $this->recValores();
-    $this->UpdatePerfume($this->VF,$this->VA,$this->VAL,$this->ID,($this->VF+$this->VA+$this->VAL));
-     
-}
-
-public function FormUpdate($ID){
-    $this->recValores();
-    $Lista = $this->ListarPerfume();
-    foreach($Lista as $dados){
-        if($dados['COD']==$ID){
-            $VA = $dados['VA'];
-            $VAL = $dados['VAL'];
-            $VF = $dados['VF'];        }
-
+        $this->recValores();
+        $this->cadastrarPerfume($this->VF, $this->VA, $this->VAL, $this->IDF, $this->VT);
     }
 
-    echo "<!--MODAL UPDATE-->
+    public function Update()
+    {
+
+        $this->recValores();
+        $this->UpdatePerfume($this->VF, $this->VA, $this->VAL, $this->ID, ($this->VF + $this->VA + $this->VAL));
+    }
+
+    public function Excluir()
+    {
+        $this->recValores();
+        if ($this->codEx != null) {
+            foreach ($this->codEx as $dadosdel) {
+                $this->DeletarPerfume($dadosdel);
+            }
+        }else{
+            echo "<script>alert('Opção Inválida!!!')</script>";
+        }
+    }
+
+    public function FormUpdate($ID)
+    {
+        $this->recValores();
+        $Lista = $this->ListarPerfume();
+        foreach ($Lista as $dados) {
+            if ($dados['COD'] == $ID) {
+                $VA = $dados['VA'];
+                $VAL = $dados['VAL'];
+                $VF = $dados['VF'];
+            }
+        }
+
+        echo "<!--MODAL UPDATE-->
 
 <script>window.onload = function() { document.getElementById('modalshow').click(); };</script>
 <input type='hidden' id='modalshow' class='btn btn-primary'  data-toggle='modal' data-target='.modal-alterar'>
@@ -116,7 +158,7 @@ public function FormUpdate($ID){
     
         <div class='modal-dialog modal-lg' role='document'>
             <div class='modal-content' style='padding: 15px 15px;'>
-                  <form method='POST' action='".DIRPAGE."home/Alterar-Dados-de-Perfume'>
+                  <form method='POST' action='" . DIRPAGE . "home/Alterar-Dados-de-Perfume'>
                   <input type='hidden' name='id_perf' value='$dados[COD]'>
                     <div class='row-fluid'>
     
@@ -165,7 +207,5 @@ public function FormUpdate($ID){
             </div>
         </div>
     </div> <!-- FIM DO MODAL-->";
-    
-}
-
+    }
 }
