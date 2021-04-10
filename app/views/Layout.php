@@ -62,17 +62,22 @@
                         
                         <li>
 
-                            <a href="" class="menuToggle">Cadastrar</a>
+                            <a class="menuToggle">Cadastrar</a>
                               <ul class="menu hide">
-                                  <li><a href=""><span>Fragância</span></a></li>
-                                  <li><a href=""><span>Alcool</span></a></li>
-                                  <li><a href=""><span>Agua</span></a></li>
-                              </ul>
+                                  <li><a href="<?php echo DIRPAGE?>cadastro-fragancia"><span>Fragância</span></a></li>
+                                  <li><a href="<?php echo DIRPAGE?>cadastro-alcool"><span>Alcool</span></a></li>
+                                  <li><a href="<?php echo DIRPAGE?>cadastro-agua"><span>Agua</span></a></li>
+                           
+                                </ul>
                         </li>
                         <li> 
                             
-                          <a href="" class="menuToggle">Estoques</a>
-               
+                          <a class="menuToggle">Estoques</a>
+                          <ul class="menu hide">
+                                  <li><a href="<?php echo DIRPAGE?>estoque-fragancia"><span>Fragância</span></a></li>
+                                  <li><a href="<?php echo DIRPAGE?>estoque-alcool"><span>Alcool</span></a></li>
+                                  <li><a href="<?php echo DIRPAGE?>estoque-agua"><span>Agua</span></a></li>
+                              </ul>
                              
                         </li>
                     </ul>
