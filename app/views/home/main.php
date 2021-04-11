@@ -4,7 +4,7 @@
     <div class="row-fluid">
         <div class="row-fluid">
         <form onsubmit="req_p()" method="POST" action="<?PHP echo DIRPAGE?>home/Cadastrar-Perfume" id="perfform" name="perfform">
-       
+   
             <div class="span4">
 
                 <div class="control-group">
@@ -18,7 +18,7 @@
                             foreach ($FRAG_SEL as $dados) {
                             ?>
                                 <option value="<?PHP echo $dados['COD']?>">
-                                    <?php echo $dados['DESC'] ?>
+                                    <?php echo $dados['NAME'] ?>
                                 </option>
                             <?php } ?>
                         </select>
@@ -78,7 +78,7 @@
 
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content" style="padding: 15px 15px;">
-
+        <h4>Preparação de Perfumes</h4>
             
               
                 <div class="row-fluid">
