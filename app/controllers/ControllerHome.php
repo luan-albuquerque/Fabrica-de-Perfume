@@ -159,6 +159,7 @@ class ControllerHome extends ModelPerfume
         <div class='modal-dialog modal-lg' role='document'>
             <div class='modal-content' style='padding: 15px 15px;'>
                   <form method='POST' action='" . DIRPAGE . "home/Alterar-Dados-de-Perfume'>
+                  <h4>Alteração de Ingredientes</h4>
                   <input type='hidden' name='id_perf' value='$dados[COD]'>
                     <div class='row-fluid'>
     
