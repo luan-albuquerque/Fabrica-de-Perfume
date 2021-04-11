@@ -64,9 +64,9 @@
 
                             <a class="menuToggle">Cadastrar</a>
                               <ul class="menu hide">
-                                  <li><a href="<?php echo DIRPAGE?>cadastro-fragancia"><span>Fragância</span></a></li>
-                                  <li><a href="<?php echo DIRPAGE?>cadastro-alcool"><span>Alcool</span></a></li>
-                                  <li><a href="<?php echo DIRPAGE?>cadastro-agua"><span>Agua</span></a></li>
+                                  <li><a href="<?php echo DIRPAGE?>fragancia"><span>Fragância</span></a></li>
+                                  <li><a href="<?php echo DIRPAGE?>alcool"><span>Alcool</span></a></li>
+                                  <li><a href="<?php echo DIRPAGE?>agua"><span>Agua</span></a></li>
                            
                                 </ul>
                         </li>
