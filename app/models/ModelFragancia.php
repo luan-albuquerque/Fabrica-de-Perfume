@@ -15,7 +15,9 @@ protected function ListarFrag(){
    while($Fetch = $BFetch->Fetch(\PDO::FETCH_ASSOC)){
    $ArrayList[$I] = [
        'COD' => $Fetch['id'],
-       'DESC' => $Fetch['descr']
+       "REG" => $Fetch['dtreg'],
+       'NAME' => $Fetch['name'],
+       'DESC' => $Fetch['descricao']
     ]; 
     $I++;
 }
