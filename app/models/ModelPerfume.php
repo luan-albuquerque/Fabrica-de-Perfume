@@ -32,7 +32,7 @@ class ModelPerfume extends ClassConexao
             'COD' => $Fetch['idperf'],
             'REG' => $Fetch['dtregistro'],
              'ID_F' =>  $Fetch['id_frag'],
-             'DESC' => $Fetch['descr'],
+             'DESC' => $Fetch['name'],
              'VF'  => $Fetch['volumeFra'],
              'VA'  => $Fetch['volumeAgua'],
              'VAL' => $Fetch['volumeAlcool'],
