@@ -13,7 +13,7 @@ class ControllerEstFrag extends ModelFragancia{
       $render->setKeyWords('');
       $render->setDescription('');
       $render->setTitle('');
-      $render->setDir('agua');
+      $render->setDir('est_frag');
       $render->renderLayout();
        
     }
