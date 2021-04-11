@@ -16,9 +16,9 @@ public function getRota(){
     $this->_ROTA = array( 
       "" => "ControllerHome",
       "home" => "ControllerHome",
-      "cadastro-fragancia" => "ControllerFragancia", 
-      "cadastro-agua" => "ControllerAgua",
-      "cadastro-alcool" => "ControllerAlcool",
+      "fragancia" => "ControllerFragancia", 
+      "agua" => "ControllerAgua",
+      "alcool" => "ControllerAlcool",
       "estoque-fragancia" =>"ControllerEstFrag",
       "estoque-agua" =>"ControllerEstAgua",
       "estoque-alcool" =>"ControllerEstAlcool",
