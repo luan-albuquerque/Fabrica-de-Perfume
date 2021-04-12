@@ -3,7 +3,7 @@
 
     <div class="row-fluid">
        
-            <form method="POST" action="<?PHP echo DIRPAGE ?>alcool/" >
+            <form method="POST" action="<?PHP echo DIRPAGE ?>fragancia/Cadastrar-Tipo-Fragancia" >
 
             <div class="row-fluid">
                 <div class="span4">
@@ -11,7 +11,7 @@
                         <label class="control-label">Nome da  Fragancia</label>
                         <div class="controls">
                             <div class="input-append">
-                                <input name="Namefrag" type="number" id="perfume" class="span8" placeholder="Ex: 800" style="width:85%;">
+                                <input name="NameFrag" type="text" class="span8" style="width:85%;">
 
                             </div>
                         </div>
@@ -23,7 +23,7 @@
                         <label class="control-label">Nome da  Fragancia</label>
                         <div class="controls">
                             <div class="input-append">
-                            <textarea name="fragdescricao" rows="6" cols="20" id="txtConteudo" style="width: 523px; margin: 0px 0px 10px; height: 70px;"></textarea>
+                            <textarea name="DescFrag" rows="6" cols="20"  style="width: 523px; margin: 0px 0px 10px; height: 70px;"></textarea>
                             </div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                         <label class="control-label">Volume da  Fragancia</label>
                         <div class="controls">
                             <div class="input-append">
-                                <input name="Nfrag" type="number" id="perfume" class="span8" placeholder="Ex: 800" style="width:85%;">
+                                <input name="Vfrag" type="number" id="perfume" class="span8" placeholder="Ex: 800" style="width:85%;">
 
                             </div>
                         </div>
