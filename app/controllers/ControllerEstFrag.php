@@ -9,7 +9,7 @@ use Src\Classes\ClassRender;
 
 class ControllerEstFrag extends ModelFragancia
 {
-  private $codEx;
+  private $codEx, $IDF, $VF;
 
   public function __construct()
   {
@@ -27,8 +27,25 @@ class ControllerEstFrag extends ModelFragancia
     if (isset($_POST['id_cod'])) {
       $this->codEx = $_POST['id_cod'];
     }
-    
+
+    if (isset($_POST['Vfrag'])) {
+      $this->VF = filter_input(INPUT_POST, 'Vfrag', FILTER_SANITIZE_SPECIAL_CHARS);
+    }
+    if (isset($_POST['select_idfrag'])) {
+      $this->IDF = filter_input(INPUT_POST, 'select_idfrag', FILTER_SANITIZE_SPECIAL_CHARS);
+    }
+    if ($_POST['tipo_v'] == 1) {
+      $this->VT = $this->VT * 1000;
+    }
   }
+
+  public function Cadastrar()
+  {
+
+    $this->recValores();
+    $this->CadastrarEstFrag($this->VF, $this->IDF);
+  }
+
   public function Excluir()
   {
     $this->recValores();
@@ -71,7 +88,7 @@ class ControllerEstFrag extends ModelFragancia
         <th scope='col'>ID</th>
         <th scope='col'>Registro</th>
          <th scope='col'>Fragancia</th>
-         <th scope='col'>Volume</th>
+         <th scope='col'>Volume Disponivel</th>
          <th></th>
          
          </tr>
@@ -87,7 +104,7 @@ class ControllerEstFrag extends ModelFragancia
          <td>$dados[COD]</td>
          <td>$dados[REG]</td>
          <td>$dados[NAME]</td>
-         <td>$dados[VF] ml</td>
+         <td>$dados[VI] ml</td>
          <td>
          <label class='lix' id='l1' for='$dados[COD]'>
          <a id=''class=' btn-action glyphicons bin btn-info'> 

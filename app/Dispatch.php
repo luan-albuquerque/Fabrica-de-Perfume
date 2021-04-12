@@ -51,7 +51,12 @@ private function controleDeMetodos()
         "Deletar-Agua" => "Excluir",
         "Deletar-Alcool" => "Excluir",
         "Deletar-Tpo-Fragancia" => "Excluir",
-        "Cadastrar-Tipo-Fragancia" => "CadastrarTPF"
+        "Cadastrar-Tipo-Fragancia" => "CadastrarTPF",
+        "Formulario-Update-Fragancia" => "FormUpdate",
+        "Alterar-Dados-de-Fragancia" => "Update",
+        "Cadastrar-Fragancia" => "Cadastrar",
+        "Cadastrar-Agua" => "Cadastrar",
+        "Cadastrar-Alcool" => "Cadastrar"
 
     );
 

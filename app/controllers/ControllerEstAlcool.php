@@ -17,11 +17,18 @@ class ControllerEstAlcool extends ModelAlcool
         $render->setDir('est_alcool');
         $render->renderLayout();
     }
-    private $SOMA = 0, $DT;
+    private $SOMA = 0, $DT,$VAL;
     private function recValores()
     {
         if (isset($_POST['id_cod'])) {
             $this->codEx = $_POST['id_cod'];
+        }
+        if (isset($_POST['Valcool'])) {
+            $this->VAL = filter_input(INPUT_POST, 'Valcool', FILTER_SANITIZE_SPECIAL_CHARS);
+        }
+
+        if ($_POST['tipo_v'] == 1) {
+            $this->VAL = $this->VAL * 1000;
         }
     }
 
@@ -51,7 +58,7 @@ class ControllerEstAlcool extends ModelAlcool
          ";
         foreach ($result as $dado) {
 
-            $this->SOMA += $dado['VAL'];
+            $this->SOMA += $dado['VALT'];
             $this->DT = new DateTime($dado['REG']);
             $this->DT = $this->DT->format('d/m/Y');
         }

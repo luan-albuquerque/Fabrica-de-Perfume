@@ -5,6 +5,16 @@ use App\models\ClassConexao;
 
 class ModelFragancia extends ClassConexao{
 
+    protected function CadastrarEstFrag($VF, $ID){
+
+        $this->db = $this->connectionMysql()
+            ->prepare("INSERT INTO est_fragancia VALUES(null,:dtreg,$VF,$VF,:ID)");
+        $this->db->bindParam(":dtreg", date("Y-m-d"), \PDO::PARAM_STR);
+        $this->db->bindParam(":ID", $ID, \PDO::PARAM_INT);
+        $this->db->execute();
+        echo "<script>alert('Fragancia registrada com Sucesso!')</script>";
+
+}
 
 protected function ListarFrag(){
 
@@ -37,6 +47,7 @@ protected function  ListarEstFrag(){
         "REG" => $Fetch['dt_registro'],
         'NAME' => $Fetch['name'],
         'VF' => $Fetch['volume'],
+        'VI' => $Fetch['volumeInicial'],
         'CODFRAG' => $Fetch['id']
         
      ]; 
@@ -95,11 +106,21 @@ protected function CadastrarTipoDeFrag($NAME, $DESC){
         $this->db->bindParam(":descr", $DESC, \PDO::PARAM_STR);
         $this->db->execute();
         echo "<script>alert('Nova Fragancia cadastrado com Sucesso!')</script>";
-        echo "<script>alert('$NAME')</script>";
-        echo "<script>alert('$DESC')</script>";
+      
 
+}
 
-
+protected function UpdateFragancia($ID,$NAME,$DESC)
+{
+    if($ID != null){
+    $this->db = $this->connectionMysql()
+ ->prepare("UPDATE  fragancia  SET name='$NAME',descricao='$DESC' WHERE id=$ID");
+    $this->db->execute();
+    echo "<script>alert('Alterado com sucesso!')</script>";
+    
+}else{
+echo "<script>alert('Campos Vazios')</script>";
+}
 
 }
 

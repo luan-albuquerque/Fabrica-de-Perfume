@@ -3,7 +3,7 @@
 
     <div class="row-fluid">
        
-            <form method="POST" action="<?PHP echo DIRPAGE ?>alcool/" >
+            <form method="POST" action="<?PHP echo DIRPAGE ?>alcool/Cadastrar-Alcool" >
 
             <div class="row-fluid">
                 <div class="span4">
@@ -11,7 +11,7 @@
                         <label class="control-label">Volume de Alcool</label>
                         <div class="controls">
                             <div class="input-append">
-                                <input name="Nalcool" type="number" id="perfume" class="span8" placeholder="Ex: 800" style="width:85%;">
+                                <input name="Valcool" type="number" id="perfume" class="span8" placeholder="Ex: 800" style="width:85%;">
 
                             </div>
                         </div>

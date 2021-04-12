@@ -20,7 +20,7 @@
                 <div class="row-fluid">
                 <div class="span4">
                     <div class="control-group">
-                        <label class="control-label">Nome da  Fragancia</label>
+                        <label class="control-label">Descrição da  Fragancia</label>
                         <div class="controls">
                             <div class="input-append">
                             <textarea name="DescFrag" rows="6" cols="20"  style="width: 523px; margin: 0px 0px 10px; height: 70px;"></textarea>
@@ -45,20 +45,7 @@
 
     <div class="row-fluid">
        
-            <form method="POST" action="<?PHP echo DIRPAGE ?>alcool/" >
-
-            <div class="row-fluid">
-                <div class="span4">
-                    <div class="control-group">
-                        <label class="control-label">Volume da  Fragancia</label>
-                        <div class="controls">
-                            <div class="input-append">
-                                <input name="Vfrag" type="number" id="perfume" class="span8" placeholder="Ex: 800" style="width:85%;">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <form method="POST" action="<?PHP echo DIRPAGE ?>estoque-fragancia/Cadastrar-Fragancia" >
 
                 <div class="span4">
 
@@ -80,6 +67,35 @@
                     </div>
                 </div>
             </div>
+
+            
+          
+                <div class="span4">
+                    <div class="control-group">
+                        <label class="control-label">Volume da  Fragancia</label>
+                        <div class="controls">
+                            <div class="input-append">
+                                <input name="Vfrag" type="number" id="perfume" class="span8" placeholder="Ex: 800" style="width:85%;">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span1">
+                <div class="control-group">
+                    <label class="control-label">Tipo</label>
+
+                    <div class="controls">
+                        <select name="tipo_v" id="tipo_v" class="span8" style="width:100%;">
+                            <option selected="selected" value="0">ML</option>
+                            <option value="1">L</option>
+
+                        </select>
+                    </div>
+                </div>
+                </div>
+
+
             </div>
             
                    <div class="row-fluid">

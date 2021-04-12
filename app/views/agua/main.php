@@ -3,15 +3,14 @@
 
     <div class="row-fluid">
        
-            <form method="POST" action="<?PHP echo DIRPAGE ?>cadastro-agua/" id="perfform" name="perfform">
-
+            <form method="POST" action="<?PHP echo DIRPAGE ?>agua/Cadastrar-Agua" >
             <div class="row-fluid">
                 <div class="span4">
                     <div class="control-group">
                         <label class="control-label">Volume de Agua</label>
                         <div class="controls">
                             <div class="input-append">
-                                <input name="Nagua" type="number" id="perfume" class="span8" placeholder="Ex: 800" style="width:85%;">
+                                <input name="Vagua" type="number" id="perfume" class="span8" placeholder="Ex: 800" style="width:85%;">
 
                             </div>
                         </div>

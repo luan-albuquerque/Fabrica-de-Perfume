@@ -17,5 +17,23 @@ class ControllerAlcool extends ModelAlcool{
        
     }
 
+    private $VAL;
+    private function recValores()
+    {
+        if (isset($_POST['Valcool'])) {
+            $this->VAL = filter_input(INPUT_POST, 'Valcool', FILTER_SANITIZE_SPECIAL_CHARS);
+        }
+
+        if ($_POST['tipo_v'] == 1) {
+            $this->VAL = $this->VAL * 1000;
+        }
+    }
+
+    public function Cadastrar(){
+         $this->recValores();
+         $this->CadastrarEstAlcool($this->VAL);
+
+    }
+
     
 }

@@ -1,0 +1,44 @@
+
+input[type=checkbox].offCheckbox {
+    visibility: hidden;
+}
+
+label.lix {
+
+    background-size: cover;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    float: left;
+    margin-right: 14px;
+    background-repeat: no-repeat;
+    background-image: url("../img/li_action.png");
+
+}
+
+label.lix:hover {
+
+    background-image: url("../img/li_v_action.png");
+}
+
+input:checked + label.lix {
+    background-image: url("../img/li_v_action.png");
+}
+
+label.lap {
+    background-size: cover;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    float: left;
+    background-image: url("../img/lp_acition.png");
+    background-repeat: no-repeat;
+}
+
+label.lap:hover {
+    width: 22px;
+    height: 22px;
+    float: left;
+    background-image: url("../img/lp_v_action.png");
+
+}
