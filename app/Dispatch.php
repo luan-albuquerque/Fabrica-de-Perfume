@@ -46,7 +46,12 @@ private function controleDeMetodos()
         "Cadastrar-Perfume" => "Cadastrar",
         "Deletar-Perfume" => "Excluir",
         "Alterar-Dados-de-Perfume" => "Update",
-        "Formulario-Update" =>  "FormUpdate"
+        "Formulario-Update" =>  "FormUpdate",
+        "Deletar-Fragancia" => "Excluir",
+        "Deletar-Agua" => "Excluir",
+        "Deletar-Alcool" => "Excluir",
+        "Deletar-Tpo-Fragancia" => "Excluir",
+        "Cadastrar-Tipo-Fragancia" => "CadastrarTPF"
 
     );
 
