@@ -42,6 +42,7 @@
 
     <!-- Custom Onload Script -->
     <script src="<?php echo DIRTHEME?>/scripts/load.js"></script>
+    <link rel="stylesheet" href="<?php echo DIRCSS?>/select_options.css">
     <?php $this->addHeader()?>
 
 </head>
@@ -57,7 +58,7 @@
                     
                     <ul id="menu" class="hidden-phone">
                         <li class="active">
-                        <a href="" class="menuToggle">Home</a>
+                        <a href="<?php echo DIRPAGE?>home" class="menuToggle">Home</a>
                         </li>
                         
                         <li>
