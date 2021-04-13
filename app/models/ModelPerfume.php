@@ -8,25 +8,20 @@ use Exception;
 class ModelPerfume extends ClassConexao
 {
 
-    private $db,$SELMAX;
+    private $db,$UPdb;
 
     protected function cadastrarPerfume($VF, $VA, $VAL, $IDF, $VT)
     {
 
-        $this->db = $this->connectionMysql()
+  /*      $this->db = $this->connectionMysql()
             ->prepare("INSERT INTO perfume VALUES(null,:dtreg,:key_frag,$VF,$VA,$VAL,$VT)");
         $this->db->bindParam(":dtreg", date("Y-m-d"), \PDO::PARAM_STR);
         $this->db->bindParam(":key_frag", $IDF, \PDO::PARAM_INT);
         $this->db->execute();
-
-        $this->SELMAX =$this->connectionMysql()->prepare(
-            "SELECT  max(id_est) FROM est_agua"
-        );
-        $this->SELMAX->execute();
-        ECHO $this->SELMAX->fetch(\PDO::FETCH_ASSOC);
-
-
-
+*/
+       $this->BaixaDeVolumeAlcool(6121);
+          
+        
 
     }
 
@@ -75,4 +70,34 @@ class ModelPerfume extends ClassConexao
             $this->db->execute();
         }
     }
+
+
+private function BaixaDeVolumeAlcool($VALOR){
+    
+     $volume = $this->connectionMysql()->prepare("select sum(volume) from est_alcool");
+     $volume->execute();
+     if($volume->fetch()[0] < $VALOR){
+        return "negado";
+     }else{
+    while($VALOR > 0){
+     $MAXVOL = $this->connectionMysql()->prepare("select max(volume) from est_alcool where volume > 0");
+     $MAXVOL->execute();
+     if($VALOR > $MAXVOL->fetch()[0]){
+
+         $this->UPdb=$this->connectionMysql()->prepare
+         ("UPDATE est_alcool set volume=0 where id_est = (select max(id_est) from est_alcool where volume > 0);");
+         $this->UPdb->execute();
+         $VALOR = $VALOR - $MAXVOL->fetch()[0]; 
+     }else{
+         $this->UPdb=$this->connectionMysql()->prepare
+         ("UPDATE est_alcool set volume=(volume-$VALOR) where id_est = (select max(id_est) from est_alcool where volume > 0);");
+         $this->UPdb->execute();
+         $VALOR=0;
+         return "Baixado";
+
+         }
+             }
+ }
+}
+
 }
