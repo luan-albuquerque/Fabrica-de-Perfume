@@ -55,8 +55,8 @@ class ControllerHome extends ModelPerfume
 
         echo "
         
-        <form id='formexcluir' method='POST' action='",DIRPAGE."home/Deletar-Perfume'>
-        <table cellspacing='0' cellpadding='4' border='0' id='ctl00_Body_grvChamados' style='color:#333333;width:100%;border-collapse:collapse;'>
+        <form id='formexcluir' method='POST' action='".DIRPAGE."home/Deletar-Perfume'>
+        <table cellspacing='0' cellpadding='4' border='0' style='color:#333333;width:100%;border-collapse:collapse;'>
 	
         <!--DEF DE COLUNAS -->
          	<tr style='color:White;background-color:#71C39A;font-weight:bold;'>
@@ -91,13 +91,10 @@ class ControllerHome extends ModelPerfume
             <td><STRONG>$dados[VT]ml</sSTRONG></td>
             <td><a href='" . DIRPAGE . "home/Formulario-Update/$dados[COD]' target='blank'  class='btn-action glyphicons pencil btn-info'><i></i></a></td>
             <td>
-            <label class='lix' id='l1' for='$dados[COD]'>
-            <a id='asel'class=' btn-action glyphicons bin btn-info'> 
-            <i></i></a></label>
             <input class='offCheckbox' type='checkbox' id='$dados[COD]' name='id_cod[]' value='$dados[COD]'>
-           
-
-</td>
+            <label class='btn-action glyphicons asel bin' id='l1' for='$dados[COD]'>
+            <a> 
+            <i></i></a></label> </td>
 	       </tr>
 
             ";
@@ -106,7 +103,7 @@ class ControllerHome extends ModelPerfume
         <!--FIM DO TR DE ADIÇÃO-->
 	       </table>
           <hr>
-           <input class='redirect btn btn-primary' value='Excluir' for='formexcluir' type='submit'>
+           <input n class='redirect btn btn-primary' value='Excluir' for='formexcluir' type='submit'>
            </form>";
     }
 

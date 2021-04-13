@@ -37,7 +37,8 @@ class ControllerEstAlcool extends ModelAlcool
         $this->recValores();
         if ($this->codEx != null) {
             foreach ($this->codEx as $dadosdel) {
-                $this->DeletarAlcool($dadosdel);
+               
+              $this->DeletarAlcool($dadosdel);
             }
         } else {
             echo "<script>alert('Opção Inválida!!!')</script>";
@@ -95,14 +96,11 @@ class ControllerEstAlcool extends ModelAlcool
          <td><STRONG>$dados[COD]</STRONG></td>
          <td>$dt</td>
          <td>$dados[VAL] ml</td>
-          <td>
-         <label class='lix' id='l1' for='$dados[COD]'>
-         <a id=''class=' btn-action glyphicons bin btn-info'> 
-         <i></i></a></label>
+         <td>
          <input class='offCheckbox' type='checkbox' id='$dados[COD]' name='id_cod[]' value='$dados[COD]'>
-        
-
-</td>
+         <label class='btn-action glyphicons asel bin' id='l1' for='$dados[COD]'>
+         <a> 
+         <i></i></a></label> </td>
       </tr>
 
          ";

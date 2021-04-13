@@ -44,7 +44,7 @@ class ModelAlcool extends ClassConexao
     protected function DeletarAlcool($ID)
     {
         $this->db = $this->connectionMysql()
-            ->prepare("DELETE FROM est_alcool WHERE id=:ID");
+            ->prepare("DELETE FROM est_alcool WHERE id_est=$ID");
         $this->db->bindParam(":ID", $ID, \PDO::PARAM_INT);
         $this->db->execute();
         echo "<script>alert('Registro Excluido com Sucesso!')</script>";

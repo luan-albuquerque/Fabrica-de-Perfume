@@ -35,7 +35,7 @@ class ControllerEstFrag extends ModelFragancia
       $this->IDF = filter_input(INPUT_POST, 'select_idfrag', FILTER_SANITIZE_SPECIAL_CHARS);
     }
     if ($_POST['tipo_v'] == 1) {
-      $this->VT = $this->VT * 1000;
+      $this->VF = $this->VF * 1000;
     }
   }
 
@@ -51,7 +51,7 @@ class ControllerEstFrag extends ModelFragancia
     $this->recValores();
     if ($this->codEx != null) {
       foreach ($this->codEx as $dadosdel) {
-        $this->DeletarTpFragancia($dadosdel);
+        $this->DeletarEstFragancia($dadosdel);
       }
     } else {
       echo "<script>alert('Opção Inválida!!!')</script>";
@@ -106,13 +106,10 @@ class ControllerEstFrag extends ModelFragancia
          <td>$dados[NAME]</td>
          <td>$dados[VI] ml</td>
          <td>
-         <label class='lix' id='l1' for='$dados[COD]'>
-         <a id=''class=' btn-action glyphicons bin btn-info'> 
-         <i></i></a></label>
          <input class='offCheckbox' type='checkbox' id='$dados[COD]' name='id_cod[]' value='$dados[COD]'>
-        
-
-</td>
+         <label class='btn-action glyphicons asel bin' id='l1' for='$dados[COD]'>
+         <a> 
+         <i></i></a></label> </td>
       </tr>
 
          ";

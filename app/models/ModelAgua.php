@@ -48,7 +48,7 @@ class ModelAgua extends ClassConexao
     protected function DeletarAgua($ID)
     {
         $this->db = $this->connectionMysql()
-            ->prepare("DELETE FROM est_agua WHERE id=:ID");
+            ->prepare("DELETE FROM est_agua WHERE id_est=:ID");
         $this->db->bindParam(":ID", $ID, \PDO::PARAM_INT);
         $this->db->execute();
         echo "<script>alert('Registro Excluido com Sucesso!')</script>";

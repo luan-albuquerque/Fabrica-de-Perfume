@@ -1,5 +1,7 @@
 
 $(window).load(function () {
+ 
+    
     var perfume, tipo;
 
     $('button[name=preparar]').click(function () {
@@ -49,7 +51,7 @@ function req_p() {
             addEventListener('submit', function (e) { e.preventDefault(); });
 
         } else {
-            alert("Cadastrar com Sucesso.");
+           
             document.getElementById('perfform').submit();
         }
     } else {
@@ -62,4 +64,5 @@ function req_p() {
 
 };
 
+    
 

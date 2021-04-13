@@ -92,6 +92,7 @@ protected function  ListarEstFrag(){
     } catch(\PDOException $e){
 
         echo "<script>alert('Fragancia não pode ser deletada porque está sendo utilizada!')</script>";
+    
     }
     
 
@@ -124,6 +125,18 @@ echo "<script>alert('Campos Vazios')</script>";
 
 }
 
+protected function DeletarEstFragancia($ID){
+
+
+        $this->db = $this->connectionMysql()
+            ->prepare("DELETE FROM est_fragancia WHERE id_est=:ID");
+        $this->db->bindParam(":ID", $ID, \PDO::PARAM_INT);
+        $this->db->execute();
+          echo "<script>alert('Registro Excluido com Sucesso!')</script>";
+ 
+    
+
+}
 
 
 

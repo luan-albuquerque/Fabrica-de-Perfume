@@ -87,6 +87,12 @@ html .halflings {
 .glyphicons.bin i:before {
   content: "\e017";
 }
+
+.glyphicons.bin:hover i:before{
+  content: "\e017";
+  background: black;
+}
+
 .glyphicons.music i:before {
   content: "\e018";
 }
